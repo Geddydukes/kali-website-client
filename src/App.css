@@ -23,7 +23,6 @@ body {
   justify-content: center;
   align-items: center;
   display: flex;
-  /* margin: 0 auto; */
 }
 
 .home {
@@ -51,10 +50,24 @@ body {
 .navigation {
   height: 40px;
   background-color: chocolate;
+  position: relative;
   text-align: center;
   align-self: center;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   display: flex;
   margin: 0 auto;
+  color: black;
+  text-decoration: none;
+}
+
+.navigation a {
+  margin: 0 7vw;
+  color: black;
+  text-decoration: none;
+}
+
+.navigation a:hover {
+  margin: 0 7vw;
+  transform: scale(1.1);
 }

@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Bio from "../pages/Bio";
+import Contact from "../pages/Contact";
 
 const Routes = (props) => (
   <Switch>
@@ -19,7 +20,8 @@ const Routes = (props) => (
         );
       }}
     />
-    <Route path="/Bio" component={Bio} />
+    <Route exact path="/Bio" component={Bio} />
+    <Route exact path="/contact" component={Contact} />
   </Switch>
 );
 
