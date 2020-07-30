@@ -4,7 +4,7 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div>
+    <div className="home">
       <p>Home</p>
       {/* TODO - create a page to display images (ideally with likes and comments) */}
     </div>
