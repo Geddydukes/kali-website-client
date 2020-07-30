@@ -38,7 +38,7 @@ body {
 
 .footer {
   background-color: chartreuse;
-  height: 8vh;
+  height: 50px;
   text-align: center;
   align-self: center;
   justify-content: center;
@@ -69,5 +69,27 @@ body {
 
 .navigation a:hover {
   margin: 0 7vw;
+  color: antiquewhite;
   transform: scale(1.1);
+}
+
+.socialLinksFooter {
+  display: inline-flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+}
+
+.socialLinksFooter a {
+  display: inline;
+  color: black;
+  justify-content: space-around;
+  font-size: calc(10px + 1vmin);
+  transition: linear 0.3s;
+  margin: 0 50%;
+}
+
+.socialLinksFooter i:hover {
+  transform: scale(1.4);
+  color: black;
+  transition: linear 0.3s;
 }

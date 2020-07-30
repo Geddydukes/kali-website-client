@@ -2,9 +2,16 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="footer">
-      <h3>This is the Footer</h3>
-    </div>
+    <nav className="footer">
+      <div className="socialLinksFooter">
+        <a href="https://www.facebook.com/kalialicia" target="blank">
+          <i className="fa fa-facebook" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.instagram.com/kalialicia/" target="blank">
+          <i className="fa fa-instagram" aria-hidden="true"></i>
+        </a>
+      </div>
+    </nav>
   );
 };
 
