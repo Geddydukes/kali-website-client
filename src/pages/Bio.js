@@ -4,7 +4,7 @@ import React from "react";
 
 const Bio = () => {
   return (
-    <div>
+    <div className="bio">
       <h1>Bio</h1>
       {/* Todo Create a professional bio for Kali Wagner */}
     </div>
