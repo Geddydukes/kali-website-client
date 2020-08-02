@@ -27,6 +27,7 @@ const ContactForm = () => {
       name: "",
       message: "",
       email: "",
+      subject: "",
       buttonText: "Message Sent",
     });
   };
@@ -37,13 +38,15 @@ const ContactForm = () => {
       buttonText: "...sending",
     });
     let data = contactData;
-    console.log(data);
-    sendEmail(data).then((res) => {
-      console.log(res);
-      setContactData({ sent: true });
-      console.log("Success");
-      resetForm();
-    });
+    sendEmail(data)
+      .then((res) => {
+        setContactData({ sent: true });
+        console.log("Success", res);
+        resetForm();
+      })
+      .catch(() => {
+        console.log(`Error on contactform`);
+      });
   };
 
   return (
