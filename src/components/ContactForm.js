@@ -19,7 +19,6 @@ const ContactForm = () => {
       ...contactData,
       [event.target.name]: event.target.value,
     });
-    console.log(contactData);
   };
 
   const resetForm = () => {
@@ -28,24 +27,24 @@ const ContactForm = () => {
       message: "",
       email: "",
       subject: "",
-      buttonText: "Message Sent",
+      buttonText: "Success! Message Sent",
     });
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setContactData({
-      buttonText: "...sending",
+      buttonText: "...Sending",
     });
     let data = contactData;
     sendEmail(data)
       .then((res) => {
         setContactData({ sent: true });
-        console.log("Success", res);
         resetForm();
+        console.log("Success");
       })
-      .catch(() => {
-        console.log(`Error on contactform`);
+      .catch((err) => {
+        console.log(`Error on contactform`, err);
       });
   };
 
@@ -56,6 +55,7 @@ const ContactForm = () => {
           <label className="message-name" htmlFor="message-name">
             Your Name
           </label>
+          <br></br>
           <input
             onChange={handleChange}
             name="name"
@@ -63,18 +63,20 @@ const ContactForm = () => {
             type="text"
             placeholder="Your Name"
             value={contactData.name}
+            required
           />
         </div>
         <div>
           <label className="message-email" htmlFor="message-email">
             Your Email
           </label>
+          <br></br>
           <input
             onChange={handleChange}
             name="email"
             className="message-email"
             type="email"
-            placeholder="your@email.com"
+            placeholder="Your@email.com"
             required
             value={contactData.email}
           />
@@ -83,6 +85,7 @@ const ContactForm = () => {
           <label className="message-subject" htmlFor="message-subject">
             Subject
           </label>
+          <br></br>
           <input
             onChange={handleChange}
             name="subject"
@@ -90,12 +93,15 @@ const ContactForm = () => {
             type="text"
             placeholder="Subject"
             value={contactData.subject}
+            required
+            number="40"
           />
         </div>
         <div>
           <label className="message" htmlFor="message-input">
             Your Message
           </label>
+          <br></br>
           <textarea
             onChange={handleChange}
             name="message"
@@ -104,8 +110,12 @@ const ContactForm = () => {
             placeholder="Please write your message here"
             value={contactData.message}
             required
+            cols="40"
+            rows="10"
           />
         </div>
+        <br></br>
+        <br></br>
         <div className="button--container">
           <button type="submit" className="button button-primary">
             {contactData.buttonText}

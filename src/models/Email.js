@@ -9,7 +9,7 @@ export const sendEmail = async (data) => {
       },
       body: JSON.stringify(data),
     });
-    console.log(res.json());
+    console.log(res);
     return await res.json();
   } catch (err) {
     console.log(err);
